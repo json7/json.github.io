@@ -650,7 +650,7 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/linux内核/中断和中断处理/reuqest_irq参数说明/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/linux内核/request_irq中断注册/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="json">
@@ -669,7 +669,7 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/10/linux内核/中断和中断处理/reuqest_irq参数说明/" itemprop="url">request_irq中断注册函数参数说明</a></h1>
+                <a class="post-title-link" href="/2018/12/10/linux内核/request_irq中断注册/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -732,7 +732,7 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
 <p>IRQF_DISABLE - 该标志被设置后,意味着内核在处理中断处理程序本身期间,要禁止所有的其他中断.如果不设置,中断处理程序可以与除本身之外的其他任何中断程序同时运行.多数中断处理程序不会设置该位的,因为禁止所有中断是一种野蛮行为. 这种用法留给希望快速执行的轻量级中断处理程序.</p>
 <p>IRQF_SAMPLE_RANDOM - </p>
 <p>要说明改标志,需要先对 <code>内核熵池(entropy pool)</code>进行解释</p>
-<p>#######<br>Linux内核采用熵来描述数据的随机性。熵（entropy）是描述系统混乱无序程度的物理量，一个系统的熵越大则说明该系统的有序性越差，即不确定性越大。在信息学中，熵被用来表征一个符号或系统的不确定性，熵越大，表明系统所含有用信息量越少，不确定度越大。<br>计算机本身是可预测的系统，因此，用计算机算法不可能产生真正的随机数。但是机器的环境中充满了各种各样的噪声，如硬件设备发生中断的时间，用户点击鼠标的时间间隔等是完全随机的，事先无法预测。Linux内核实现的随机数产生器正是利用系统中的这些随机噪声来产生高质量随机数序列。<br>内核维护了一个熵池用来收集来自设备驱动程序和其它来源的环境噪音。理论上，熵池中的数据是完全随机的，可以实现产生真随机数序列。为跟踪熵池中数据的随机性，内核在将数据加入池的时候将估算数据的随机性，这个过程称作熵估算。熵估算值描述池中包含的随机数位数，其值越大表示池中数据的随机性越好。</p>
+<h6 id=""><a href="#" class="headerlink" title="#"></a>#</h6><p>Linux内核采用熵来描述数据的随机性。熵（entropy）是描述系统混乱无序程度的物理量，一个系统的熵越大则说明该系统的有序性越差，即不确定性越大。在信息学中，熵被用来表征一个符号或系统的不确定性，熵越大，表明系统所含有用信息量越少，不确定度越大。<br>计算机本身是可预测的系统，因此，用计算机算法不可能产生真正的随机数。但是机器的环境中充满了各种各样的噪声，如硬件设备发生中断的时间，用户点击鼠标的时间间隔等是完全随机的，事先无法预测。Linux内核实现的随机数产生器正是利用系统中的这些随机噪声来产生高质量随机数序列。<br>内核维护了一个熵池用来收集来自设备驱动程序和其它来源的环境噪音。理论上，熵池中的数据是完全随机的，可以实现产生真随机数序列。为跟踪熵池中数据的随机性，内核在将数据加入池的时候将估算数据的随机性，这个过程称作熵估算。熵估算值描述池中包含的随机数位数，其值越大表示池中数据的随机性越好。</p>
 <p>因此,有随机性质的 中断事件自然就成为了 内核熵池 的贡献方之一.通过设置 IRQF_SAMPLE_RANDOM 表明该设备可以对 entropy pool 产生贡献. 内核熵池 负责提供各种随机事件导出真正的随机数.如果指定了改标志,那么来自该设备的<code>中断间隔时间</code> 就会作为 熵 填充到 熵池. 如果你的设备以预知的速率产生中断(比如系统定时器),那么就不要设置这个标志.相反,有其他很多的硬件产生中断的速率是不可预知的,所以都能成为一种较好的熵源.</p>
 <p>IRQF_TIMER - </p>
 <p>改标志是特别为系统定时器的中断处理准备的</p>
