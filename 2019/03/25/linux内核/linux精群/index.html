@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="惊群 accept poll SO_REUSEPORT,">
 
 
 
@@ -79,13 +79,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨赛的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1、惊群效应是什么？​       惊群效应也有人叫做雷鸣群体效应，不过叫什么，简言之，惊群现象就是多进程（多线程）在同时阻塞等待同一个事件的时候（休眠状态），如果等待的这个事件发生，那么他就会唤醒等待的所有进程（或者线程），但是最终却只可能有一个进程（线程）获得这个时间的“控制权”，对该事件进行处理，而其他进程（线程）获取“控制权”失败，只能重新进入休眠状态，这种现象和性能浪费就叫做惊群。​">
+<meta name="keywords" content="惊群 accept poll SO_REUSEPORT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 惊群">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/linux内核/linux精群/index.html">
 <meta property="og:site_name" content="杨赛的博客">
+<meta property="og:description" content="1、惊群效应是什么？​       惊群效应也有人叫做雷鸣群体效应，不过叫什么，简言之，惊群现象就是多进程（多线程）在同时阻塞等待同一个事件的时候（休眠状态），如果等待的这个事件发生，那么他就会唤醒等待的所有进程（或者线程），但是最终却只可能有一个进程（线程）获得这个时间的“控制权”，对该事件进行处理，而其他进程（线程）获取“控制权”失败，只能重新进入休眠状态，这种现象和性能浪费就叫做惊群。​">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128003134438?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128134307256?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128134500805?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128154340091?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128154956756?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128161247628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128170517173?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20171128171230486?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2019-03-25T05:45:42.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨赛的博客">
+<meta name="twitter:title" content="linux 惊群">
+<meta name="twitter:description" content="1、惊群效应是什么？​       惊群效应也有人叫做雷鸣群体效应，不过叫什么，简言之，惊群现象就是多进程（多线程）在同时阻塞等待同一个事件的时候（休眠状态），如果等待的这个事件发生，那么他就会唤醒等待的所有进程（或者线程），但是最终却只可能有一个进程（线程）获得这个时间的“控制权”，对该事件进行处理，而其他进程（线程）获取“控制权”失败，只能重新进入休眠状态，这种现象和性能浪费就叫做惊群。​">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20171128003134438?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHl6dHl5Y29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
 
 
@@ -115,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/25/linux内核/linux精群/">
 
 
 
 
 
-  <title>杨赛的博客</title>
+  <title>linux 惊群 | 杨赛的博客</title>
   
 
 
@@ -140,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/linux内核/linux精群/" itemprop="url">linux 惊群</a></h1>
+          <h1 class="post-title" itemprop="name headline">linux 惊群</h1>
         
 
         <div class="post-meta">
@@ -298,9 +309,7 @@
       
 
       
-        
-          
-            <p>1、惊群效应是什么？<br>​       惊群效应也有人叫做雷鸣群体效应，不过叫什么，简言之，惊群现象就是多进程（多线程）在同时阻塞等待同一个事件的时候（休眠状态），如果等待的这个事件发生，那么他就会唤醒等待的所有进程（或者线程），但是最终却只可能有一个进程（线程）获得这个时间的“控制权”，对该事件进行处理，而其他进程（线程）获取“控制权”失败，只能重新进入休眠状态，这种现象和性能浪费就叫做惊群。<br>​        为了更好的理解何为惊群，举一个很简单的例子，当你往一群鸽子中间扔一粒谷子，所有的各自都被惊动前来抢夺这粒食物，但是最终注定只可能有一个鸽子满意的抢到食物，没有抢到的鸽子只好回去继续睡觉，等待下一粒谷子的到来。这里鸽子表示进程（线程），那粒谷子就是等待处理的事件。</p>
+        <p>1、惊群效应是什么？<br>​       惊群效应也有人叫做雷鸣群体效应，不过叫什么，简言之，惊群现象就是多进程（多线程）在同时阻塞等待同一个事件的时候（休眠状态），如果等待的这个事件发生，那么他就会唤醒等待的所有进程（或者线程），但是最终却只可能有一个进程（线程）获得这个时间的“控制权”，对该事件进行处理，而其他进程（线程）获取“控制权”失败，只能重新进入休眠状态，这种现象和性能浪费就叫做惊群。<br>​        为了更好的理解何为惊群，举一个很简单的例子，当你往一群鸽子中间扔一粒谷子，所有的各自都被惊动前来抢夺这粒食物，但是最终注定只可能有一个鸽子满意的抢到食物，没有抢到的鸽子只好回去继续睡觉，等待下一粒谷子的到来。这里鸽子表示进程（线程），那粒谷子就是等待处理的事件。</p>
 <p>2.惊群效应到底消耗了什么？<br>​     我想你应该也会有跟我一样的问题，那就是惊群效应到底消耗了什么？<br>​     （1）、系统对用户进程/线程频繁地做无效的调度，上下文切换系统性能大打折扣。<br>​     （2）、为了确保只有一个线程得到资源，用户必须对资源操作进行加锁保护，进一步加大了系统开销。<br>​     是不是还是觉得不够深入，概念化？看下面：<br>​         <em>1、上下文切换（context  switch）过高会导致cpu像个搬运工，频繁地在寄存器和运行队列之间奔波，更多的时间花在了进程（线程）切换，而不是在真正工作的进程（线程）上面。直接的消耗包括cpu寄存器要保存和加载（例如程序计数器）、系统调度器的代码需要执行。间接的消耗在于多核cache之间的共享数据。<br>看一下：wiki上下文切换<br>​         </em>2、通过锁机制解决惊群效应是一种方法，在任意时刻只让一个进程（线程）处理等待的事件。但是锁机制也会造成cpu等资源的消耗和性能损耗。目前一些常见的服务器软件有的是通过锁机制解决的，比如nginx（它的锁机制是默认开启的，可以关闭）；还有些认为惊群对系统性能影响不大，没有去处理，比如lighttpd。<br>3.惊群效应的庐山真面目。<br>让我们从进程和线程两个方面来揭开惊群效应的庐山真面目：</p>
 <p>*1）accept（）惊群：<br>​       首先让我们先来考虑一个场景：<br>​        主进程创建了socket、bind、listen之后，fork()出来多个进程，每个子进程都开始循环处理（accept）这个listen_fd。每个进程都阻塞在accept上，当一个新的连接到来时候，所有的进程都会被唤醒，但是其中只有一个进程会接受成功，其余皆失败，重新休眠。<br>​       那么这个问题真的存在吗？<br>​       历史上，Linux的accpet确实存在惊群问题，但现在的内核都解决该问题了。即，当多个进程/线程都阻塞在对同一个socket的接受调用上时，当有一个新的连接到来，内核只会唤醒一个进程，其他进程保持休眠，压根就不会被唤醒。<br>​       不妨写个程序测试一下，眼见为实：<br>fork_thunder_herd.c:</p>
 <pre><code>include&lt;stdio.h&gt;
@@ -481,8 +490,6 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
 <p>对于不同内核，存在两种模式，这两种模式并不共存，一种叫做热备份模式，另一种叫做负载均衡模式，3.9内核以后，全部改为负载均衡模式。</p>
 <p>热备份模式：一般而言，会将所有的reuseport同一个IP地址/端口的套接字挂在一个链表上，取第一个即可，工作的只有一个，其他的作为备份存在，如果该套接字挂了，它会被从链表删除，然后第二个便会成为第一个。</p>
 <h5 id="负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址-端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP-源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。"><a href="#负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址-端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP-源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。" class="headerlink" title="负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址/端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP/源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。"></a>负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址/端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP/源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。</h5>
-          
-        
       
     </div>
     
@@ -497,275 +504,36 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/golang/日常问题归总/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="json">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨赛的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/19/golang/日常问题归总/" itemprop="url">golang日常小问题汇总</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T14:48:00+08:00">
-                2018-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/惊群-accept-poll-SO-REUSEPORT/" rel="tag"># 惊群 accept poll SO_REUSEPORT</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="grpc"><a href="#grpc" class="headerlink" title="grpc"></a>grpc</h4><hr>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">问题:pkg/protobuf/service.pb.<span class="keyword">go</span>:<span class="number">23</span>:<span class="number">11</span>: undefined: proto.ProtoPackageIsVersion3</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决:</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/linux内核/中断和中断处理/reuqest_irq参数说明/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="json">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨赛的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/linux内核/中断和中断处理/reuqest_irq参数说明/" itemprop="url">request_irq中断注册函数参数说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T16:31:04+08:00">
-                2018-12-10
-              </time>
+              <a href="/2018/12/19/golang/日常问题归总/" rel="next" title="golang日常小问题汇总">
+                <i class="fa fa-chevron-left"></i> golang日常小问题汇总
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>驱动程序在注册终端程序:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">request_irq</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> irq, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">irq_handler_t</span> handler, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">unsigned</span> <span class="keyword">long</span> flags, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">const</span> <span class="keyword">char</span> *name, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">void</span> *dev)</span></span></span><br></pre></td></tr></table></figure>
-<p>参数解释:</p>
-<p>Irq: 要分配的中断号.对某些设备而言,比如时钟或者键盘,这个值通常是预先确定的.而对于大多数其他设备来讲,这个值要么是可以通过探测获取,要么是通过编程动态获取.</p>
-<p>Handler: handler是一个指针,指向处理这个中断的实际中断处理程序.只要os内核接收到中断,该函数就会被调用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">irqreturn_t</span> <span class="params">(*<span class="keyword">irq_handler_t</span>)</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">void</span> *)</span></span></span><br></pre></td></tr></table></figure>
-<p>Flags:</p>
-<p>中断处理程序标志,可以为0,也可能是下列一个或者多个标志的位掩码.定义在文件&lt;linux/interrupt.h&gt;中.在这些标志中最重要的是</p>
-<p>IRQF_DISABLE - 该标志被设置后,意味着内核在处理中断处理程序本身期间,要禁止所有的其他中断.如果不设置,中断处理程序可以与除本身之外的其他任何中断程序同时运行.多数中断处理程序不会设置该位的,因为禁止所有中断是一种野蛮行为. 这种用法留给希望快速执行的轻量级中断处理程序.</p>
-<p>IRQF_SAMPLE_RANDOM - </p>
-<p>要说明改标志,需要先对 <code>内核熵池(entropy pool)</code>进行解释</p>
-<p>#######<br>Linux内核采用熵来描述数据的随机性。熵（entropy）是描述系统混乱无序程度的物理量，一个系统的熵越大则说明该系统的有序性越差，即不确定性越大。在信息学中，熵被用来表征一个符号或系统的不确定性，熵越大，表明系统所含有用信息量越少，不确定度越大。<br>计算机本身是可预测的系统，因此，用计算机算法不可能产生真正的随机数。但是机器的环境中充满了各种各样的噪声，如硬件设备发生中断的时间，用户点击鼠标的时间间隔等是完全随机的，事先无法预测。Linux内核实现的随机数产生器正是利用系统中的这些随机噪声来产生高质量随机数序列。<br>内核维护了一个熵池用来收集来自设备驱动程序和其它来源的环境噪音。理论上，熵池中的数据是完全随机的，可以实现产生真随机数序列。为跟踪熵池中数据的随机性，内核在将数据加入池的时候将估算数据的随机性，这个过程称作熵估算。熵估算值描述池中包含的随机数位数，其值越大表示池中数据的随机性越好。</p>
-<p>因此,有随机性质的 中断事件自然就成为了 内核熵池 的贡献方之一.通过设置 IRQF_SAMPLE_RANDOM 表明该设备可以对 entropy pool 产生贡献. 内核熵池 负责提供各种随机事件导出真正的随机数.如果指定了改标志,那么来自该设备的<code>中断间隔时间</code> 就会作为 熵 填充到 熵池. 如果你的设备以预知的速率产生中断(比如系统定时器),那么就不要设置这个标志.相反,有其他很多的硬件产生中断的速率是不可预知的,所以都能成为一种较好的熵源.</p>
-<p>IRQF_TIMER - </p>
-<p>改标志是特别为系统定时器的中断处理准备的</p>
-<p>IRQF_SHARED - </p>
-<p>表明可以在多个中断处理程序之间共享中断线.在同一个给定的线上注册的每个处理程序必须指定这个标志,否则在每条线上只能有一个处理程序.</p>
-<p>Name:</p>
-<p>与中断相关设备的ASCII文本表示.pc机器键盘中断对应的为”keyboard”.这些名字会被/proc/irq 和 /proc/interrupts 文件使用,以便和用户通信</p>
-<p>第五个参数 dev 用于共享中短线.当一个中断处理程序需要释放时,dev将提供唯一的标识信息(cookie),以便从共享中短线的诸多中断处理程序中删除指定的那一个.如果无需共享中短线,该参数为null即可.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -775,10 +543,11 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -786,6 +555,10 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
 
 
           
+
+  
+
+
 
         </div>
         
@@ -806,8 +579,17 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -858,6 +640,22 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址-端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP-源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。"><span class="nav-number">1.</span> <span class="nav-text">负载均衡模式：和热备份模式一样，所有reuseport同一个IP地址/端口的套接字会挂在一个链表上，你也可以认为是一个数组，这样会更加方便，当有连接到来时，用数据包的源IP/源端口作为一个HASH函数的输入，将结果对reuseport套接字数量取模，得到一个索引，该索引指示的数组位置对应的套接字便是工作套接字。这样就可以达到负载均衡的目的，从而降低某个服务的压力。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -991,6 +789,10 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
