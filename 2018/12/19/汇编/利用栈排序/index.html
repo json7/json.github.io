@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="golang fix,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨赛的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
+<meta name="keywords" content="golang fix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8086汇编之利用栈空间进行数据逆序">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/汇编/利用栈排序/index.html">
 <meta property="og:site_name" content="杨赛的博客">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-25T16:03:35.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨赛的博客">
+<meta name="twitter:title" content="8086汇编之利用栈空间进行数据逆序">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/19/汇编/利用栈排序/">
 
 
 
 
 
-  <title>Archive | 杨赛的博客</title>
+  <title>8086汇编之利用栈空间进行数据逆序 | 杨赛的博客</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,72 +219,151 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 4 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/汇编/利用栈排序/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/25/linux内核/linux精群/" itemprop="url">
-              
-                <span itemprop="name">linux 惊群</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">8086汇编之利用栈空间进行数据逆序</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T16:31:04+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T14:48:00+08:00">
+                2018-12-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">dw 0123h, 0124h, 0125h, 0126h, 0127h, 0128h</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line"></span><br><span class="line">dw 0, 0, 0, 0, 0, 0</span><br><span class="line"></span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">;初始化data寄存器,栈寄存器 以及 偏移</span><br><span class="line">start: mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov ax, stack</span><br><span class="line">mov ss, ax,</span><br><span class="line">mov sp, 12</span><br><span class="line">;将数据入栈</span><br><span class="line">mov cx, 6</span><br><span class="line">s0: push [bx]</span><br><span class="line">add bx, 2</span><br><span class="line">loop s0</span><br><span class="line">;将数据出栈</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 6</span><br><span class="line">s1: pop [bx]</span><br><span class="line">add bx, 2</span><br><span class="line">loop s1</span><br><span class="line"></span><br><span class="line">;退出</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/golang-fix/" rel="tag"># golang fix</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/10/linux内核/request_irq中断注册/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/19/golang/日常问题归总/" rel="prev" title="golang日常小问题汇总">
+                golang日常小问题汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -287,6 +371,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -492,6 +580,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
