@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="golang fix,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
-<meta name="keywords" content="golang fix">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667;将data数据中的字母变成大写assume cs:code ds:datadata segmentdb &amp;apos;ibm     &amp;apos;db">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8086汇编之利用栈空间进行数据逆序">
-<meta property="og:url" content="http://yoursite.com/2018/12/19/汇编/利用栈排序/index.html">
+<meta property="og:title" content="杨赛的博客">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/汇编/循环嵌套/index.html">
 <meta property="og:site_name" content="杨赛的博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667;将data数据中的字母变成大写assume cs:code ds:datadata segmentdb &amp;apos;ibm     &amp;apos;db">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T16:03:35.502Z">
+<meta property="og:updated_time" content="2019-03-28T08:04:45.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8086汇编之利用栈空间进行数据逆序">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041assume cs:codedata segmentdw 0123h, 0124h, 0125h, 0126h, 0127h, 0128hdata endsstack segmentdw 0, 0, 0, 0, 0, 0stack endscode se">
+<meta name="twitter:title" content="杨赛的博客">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667;将data数据中的字母变成大写assume cs:code ds:datadata segmentdb &amp;apos;ibm     &amp;apos;db">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/19/汇编/利用栈排序/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/28/汇编/循环嵌套/">
 
 
 
 
 
-  <title>8086汇编之利用栈空间进行数据逆序 | 杨赛的博客</title>
+  <title> | 杨赛的博客</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/汇编/利用栈排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/汇编/循环嵌套/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="json">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">8086汇编之利用栈空间进行数据逆序</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T14:48:00+08:00">
-                2018-12-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T00:00:00+08:00">
+                2019-03-28
               </time>
             
 
@@ -300,7 +299,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">dw 0123h, 0124h, 0125h, 0126h, 0127h, 0128h</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line"></span><br><span class="line">dw 0, 0, 0, 0, 0, 0</span><br><span class="line"></span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">;初始化data寄存器,栈寄存器 以及 偏移</span><br><span class="line">start: mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov ax, stack</span><br><span class="line">mov ss, ax,</span><br><span class="line">mov sp, 12</span><br><span class="line">;将数据入栈</span><br><span class="line">mov cx, 6</span><br><span class="line">s0: push [bx]</span><br><span class="line">add bx, 2</span><br><span class="line">loop s0</span><br><span class="line">;将数据出栈</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 6</span><br><span class="line">s1: pop [bx]</span><br><span class="line">add bx, 2</span><br><span class="line">loop s1</span><br><span class="line"></span><br><span class="line">;退出</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">;将data数据中的字母变成大写</span><br><span class="line">assume cs:code ds:data</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;ibm     &apos;</span><br><span class="line">db &apos;dec     &apos;</span><br><span class="line">db &apos;dos     &apos;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">start:</span><br><span class="line">mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 4</span><br><span class="line">f:</span><br><span class="line">mov al, [bx]</span><br><span class="line">mov ah, 0</span><br><span class="line">and al, 01111111</span><br><span class="line">mov [bx], al</span><br><span class="line">add bx, 8</span><br><span class="line">loop f</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br><span class="line"></span><br><span class="line">;多层循环方式,外层循环row,内层循环column</span><br><span class="line">assume cs:code ds:data</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;ibm     &apos;</span><br><span class="line">db &apos;dec     &apos;</span><br><span class="line">db &apos;dos     &apos;</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line"></span><br><span class="line">start:</span><br><span class="line">mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 4 //4行</span><br><span class="line">rows:</span><br><span class="line">mov dx, cx ;保存游标</span><br><span class="line">mov si, 0</span><br><span class="line">mov cx, 3</span><br><span class="line">cols: ;循环当前行, 8个字节</span><br><span class="line">mov ah, 0</span><br><span class="line">mov al, [bx+si]</span><br><span class="line">and al, 11011111b</span><br><span class="line">mov [bx+si], al</span><br><span class="line">inc si</span><br><span class="line">loop cols</span><br><span class="line"></span><br><span class="line">add bx, 8</span><br><span class="line">mov cx, dx ;恢复外层游标</span><br><span class="line">loop rows</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -316,12 +315,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/golang-fix/" rel="tag"># golang fix</a>
-          
-        </div>
-      
 
       
       
@@ -331,8 +324,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/19/golang/日常问题归总/" rel="next" title="golang日常小问题汇总">
-                <i class="fa fa-chevron-left"></i> golang日常小问题汇总
+              <a href="/2019/03/26/WEB前端/vue/父子组件通信对象浅拷贝/" rel="next" title="父子组件通信 对象参数浅拷贝">
+                <i class="fa fa-chevron-left"></i> 父子组件通信 对象参数浅拷贝
               </a>
             
           </div>
@@ -340,10 +333,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/25/linux内核/linux精群/" rel="prev" title="linux 惊群">
-                linux 惊群 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
