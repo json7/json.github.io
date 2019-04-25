@@ -229,6 +229,246 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/汇编/查找第一个值为0的字节/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/30/汇编/查找第一个值为0的字节/" itemprop="url">查找第一个值为0的字节</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T00:00:00+08:00">
+                2019-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/汇编/查找技术偶数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/30/汇编/查找技术偶数/" itemprop="url">查找技术偶数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T00:00:00+08:00">
+                2019-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">;查找奇数偶数</span><br><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db 1,2,3,4,5,6,7,8</span><br><span class="line">db 0 dup(16)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 8</span><br><span class="line"></span><br><span class="line">s0:</span><br><span class="line">mov di, cx</span><br><span class="line">mov al, [bx]</span><br><span class="line">mov ah, 0</span><br><span class="line">div 2</span><br><span class="line">mov cl, ah</span><br><span class="line">mov ch, 0</span><br><span class="line">jxcz oushu</span><br><span class="line">jmp short jishu</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">oushu:</span><br><span class="line">mov [bx+8], [bx]</span><br><span class="line">mov cx, di</span><br><span class="line">jmp short s0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jishu:</span><br><span class="line">mov [bx+16], [bx]</span><br><span class="line">mov cx, di</span><br><span class="line">jmp short s0</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/汇编/循环嵌套/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -540,6 +780,126 @@
         
           
             <p>vue 父组件调用一个子组件多次,且传递的props参数为object时候,如果子组件内部对props进行了写操作,则多个子组件的状态都会受到影响.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/reactnative/常见问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/reactnative/常见问题/" itemprop="url">react native 常见问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T16:31:04+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">人生的岁月慢慢消逝在踩坑的过程中,不知不觉...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">问题:Could not find iPhone 6 simulator</span><br><span class="line">原因:react-native 版本太低, yarn upgrade pkgname@version</span><br><span class="line"></span><br><span class="line">问题:undefined is not an object (evaluating ‘RNGestureHandlerModule.State’</span><br><span class="line">原因:</span><br><span class="line">remove node_modules and package-lock.json</span><br><span class="line">npm install</span><br><span class="line">npm install --save react-navigation</span><br><span class="line">npm install --save react-native-gesture-handler</span><br><span class="line">react-native link</span><br><span class="line"></span><br><span class="line">问题:StackNavigator is not function</span><br><span class="line">原因: react-navigation 3.0版本已经废弃该方法. 3.0版本具体如何使用请看手册.或者可以看这一篇:https://www.jianshu.com/p/e69d248f2f0f</span><br><span class="line"></span><br><span class="line">问题:createBottomTabNavigator 多个tab title不显示问题</span><br><span class="line">解决办法:</span><br><span class="line">const TabNavigator = createBottomTabNavigator(&#123;</span><br><span class="line">         Feed: FeedScreen,</span><br><span class="line">         Profile: ProfileScreen,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">TabNavigator.navigationOptions = (&#123; navigation &#125;) =&gt; &#123;</span><br><span class="line">let &#123; routeName &#125; = navigation.state.routes[navigation.state.index];</span><br><span class="line">let headerTitle = routeName;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line">    headerTitle,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1009,6 +1369,126 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/golang/表达式引擎/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/19/golang/表达式引擎/" itemprop="url">golan表达式引擎</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T14:48:00+08:00">
+                2018-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://github.com/antonmedv/expr</span><br><span class="line">https://github.com/oliveagle/jsonpath</span><br><span class="line"></span><br><span class="line">用jsonpath来寻址数据,用expr定义函数功能来处理具体数据.完成了通过配置来对任意结构的json数据进行转换格式化</span><br><span class="line"></span><br><span class="line">demo:</span><br><span class="line"></span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;strings&quot;</span><br><span class="line">	&quot;encoding/json&quot;</span><br><span class="line"></span><br><span class="line">	&quot;git.qutoutiao.net/expr&quot;</span><br><span class="line">	&quot;github.com/oliveagle/jsonpath&quot;</span><br><span class="line">	&quot;github.com/tidwall/gjson&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type env struct &#123;</span><br><span class="line">	dataSource string</span><br><span class="line">	StrReplace Action</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var (</span><br><span class="line">	origin = `&#123;&quot;all&quot;:[&#123;&quot;image&quot;:&quot;http://www.baidu.com&quot;&#125;, &#123;&quot;image&quot;:&quot;http://www.google.com&quot;&#125;, &#123;&quot;image&quot;:&quot;http://www.bing.com&quot;&#125;]&#125;`</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type Action func(string) string</span><br><span class="line"></span><br><span class="line">func (e env) ForArray(rule string, action Action) string &#123;</span><br><span class="line"></span><br><span class="line">	pat, err := jsonpath.Compile(rule) //编译规则</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return &quot;&quot;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	var jsonData interface&#123;&#125;</span><br><span class="line">	json.Unmarshal([]byte(e.dataSource), &amp;jsonData)</span><br><span class="line">	res, err := pat.Lookup(jsonData) //寻找数据</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return &quot;&quot;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	jsonList, err := json.Marshal(res)</span><br><span class="line"></span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;json marshal err:%s&quot;, err.Error())</span><br><span class="line">		return &quot;&quot;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	result := []string&#123;&#125;</span><br><span class="line"></span><br><span class="line">	list := gjson.ParseBytes(jsonList).Array()</span><br><span class="line">	for _, item := range list &#123;</span><br><span class="line">		result = append(result, action(item.String()))</span><br><span class="line">	&#125;</span><br><span class="line">	r, err := json.Marshal(result)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;encode  error&quot;)</span><br><span class="line">		return &quot;&quot;</span><br><span class="line">	&#125;</span><br><span class="line">	return string(r)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func StrReplace(data string) string &#123;</span><br><span class="line">	return strings.Replace(data, &quot;http&quot;, &quot;ptth&quot;, -1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func main()  &#123;</span><br><span class="line"></span><br><span class="line">	rules := &quot;ForArray(&apos;$.all[*].image&apos;, StrReplace, &apos;http&apos;, &apos;23&apos;,)&quot;</span><br><span class="line"></span><br><span class="line">	p, err := expr.Parse(rules, expr.Env(env&#123;&#125;))</span><br><span class="line"></span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	out, err := expr.Run(p, env&#123;dataSource:origin, StrReplace: StrReplace&#125;)</span><br><span class="line"></span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(out)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/汇编/利用栈排序/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1116,148 +1596,13 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/linux内核/request_irq中断注册/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="json">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨赛的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/linux内核/request_irq中断注册/" itemprop="url">request_irq中断注册函数参数说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T16:31:04+08:00">
-                2018-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>驱动程序在注册终端程序:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">request_irq</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> irq, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">irq_handler_t</span> handler, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">unsigned</span> <span class="keyword">long</span> flags, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">const</span> <span class="keyword">char</span> *name, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">void</span> *dev)</span></span></span><br></pre></td></tr></table></figure>
-<p>参数解释:</p>
-<p>Irq: 要分配的中断号.对某些设备而言,比如时钟或者键盘,这个值通常是预先确定的.而对于大多数其他设备来讲,这个值要么是可以通过探测获取,要么是通过编程动态获取.</p>
-<p>Handler: handler是一个指针,指向处理这个中断的实际中断处理程序.只要os内核接收到中断,该函数就会被调用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">irqreturn_t</span> <span class="params">(*<span class="keyword">irq_handler_t</span>)</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">void</span> *)</span></span></span><br></pre></td></tr></table></figure>
-<p>Flags:</p>
-<p>中断处理程序标志,可以为0,也可能是下列一个或者多个标志的位掩码.定义在文件&lt;linux/interrupt.h&gt;中.在这些标志中最重要的是</p>
-<p>IRQF_DISABLE - 该标志被设置后,意味着内核在处理中断处理程序本身期间,要禁止所有的其他中断.如果不设置,中断处理程序可以与除本身之外的其他任何中断程序同时运行.多数中断处理程序不会设置该位的,因为禁止所有中断是一种野蛮行为. 这种用法留给希望快速执行的轻量级中断处理程序.</p>
-<p>IRQF_SAMPLE_RANDOM - </p>
-<p>要说明改标志,需要先对 <code>内核熵池(entropy pool)</code>进行解释</p>
-<h6 id=""><a href="#" class="headerlink" title="#"></a>#</h6><p>Linux内核采用熵来描述数据的随机性。熵（entropy）是描述系统混乱无序程度的物理量，一个系统的熵越大则说明该系统的有序性越差，即不确定性越大。在信息学中，熵被用来表征一个符号或系统的不确定性，熵越大，表明系统所含有用信息量越少，不确定度越大。<br>计算机本身是可预测的系统，因此，用计算机算法不可能产生真正的随机数。但是机器的环境中充满了各种各样的噪声，如硬件设备发生中断的时间，用户点击鼠标的时间间隔等是完全随机的，事先无法预测。Linux内核实现的随机数产生器正是利用系统中的这些随机噪声来产生高质量随机数序列。<br>内核维护了一个熵池用来收集来自设备驱动程序和其它来源的环境噪音。理论上，熵池中的数据是完全随机的，可以实现产生真随机数序列。为跟踪熵池中数据的随机性，内核在将数据加入池的时候将估算数据的随机性，这个过程称作熵估算。熵估算值描述池中包含的随机数位数，其值越大表示池中数据的随机性越好。</p>
-<p>因此,有随机性质的 中断事件自然就成为了 内核熵池 的贡献方之一.通过设置 IRQF_SAMPLE_RANDOM 表明该设备可以对 entropy pool 产生贡献. 内核熵池 负责提供各种随机事件导出真正的随机数.如果指定了改标志,那么来自该设备的<code>中断间隔时间</code> 就会作为 熵 填充到 熵池. 如果你的设备以预知的速率产生中断(比如系统定时器),那么就不要设置这个标志.相反,有其他很多的硬件产生中断的速率是不可预知的,所以都能成为一种较好的熵源.</p>
-<p>IRQF_TIMER - </p>
-<p>改标志是特别为系统定时器的中断处理准备的</p>
-<p>IRQF_SHARED - </p>
-<p>表明可以在多个中断处理程序之间共享中断线.在同一个给定的线上注册的每个处理程序必须指定这个标志,否则在每条线上只能有一个处理程序.</p>
-<p>Name:</p>
-<p>与中断相关设备的ASCII文本表示.pc机器键盘中断对应的为”keyboard”.这些名字会被/proc/irq 和 /proc/interrupts 文件使用,以便和用户通信</p>
-<p>第五个参数 dev 用于共享中短线.当一个中断处理程序需要释放时,dev将提供唯一的标识信息(cookie),以便从共享中短线的诸多中断处理程序中删除指定的那一个.如果无需共享中短线,该参数为null即可.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1301,7 +1646,7 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1314,7 +1659,7 @@ ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle-&gt;log, 0, &quot;posted events %p&quo
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

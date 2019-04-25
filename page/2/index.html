@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="中断 中断处理,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="驱动程序在注册终端程序: 12345int request_irq(unsigned int irq,                 irq_handler_t handler,                 unsigned long flags,                 const char *name,                 void *dev) 参数解释: Irq:">
-<meta name="keywords" content="中断 中断处理">
-<meta property="og:type" content="article">
-<meta property="og:title" content="request_irq中断注册函数参数说明">
-<meta property="og:url" content="http://yoursite.com/2018/12/10/linux内核/request_irq中断注册/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="杨赛的博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="杨赛的博客">
-<meta property="og:description" content="驱动程序在注册终端程序: 12345int request_irq(unsigned int irq,                 irq_handler_t handler,                 unsigned long flags,                 const char *name,                 void *dev) 参数解释: Irq:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-26T02:27:07.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="request_irq中断注册函数参数说明">
-<meta name="twitter:description" content="驱动程序在注册终端程序: 12345int request_irq(unsigned int irq,                 irq_handler_t handler,                 unsigned long flags,                 const char *name,                 void *dev) 参数解释: Irq:">
+<meta name="twitter:title" content="杨赛的博客">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/10/linux内核/request_irq中断注册/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
 
 
-  <title>request_irq中断注册函数参数说明 | 杨赛的博客</title>
+  <title>杨赛的博客</title>
   
 
 
@@ -145,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -218,9 +214,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -250,7 +246,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">request_irq中断注册函数参数说明</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/linux内核/request_irq中断注册/" itemprop="url">request_irq中断注册函数参数说明</a></h1>
         
 
         <div class="post-meta">
@@ -300,7 +298,9 @@
       
 
       
-        <p>驱动程序在注册终端程序:</p>
+        
+          
+            <p>驱动程序在注册终端程序:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">request_irq</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> irq, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">irq_handler_t</span> handler, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">unsigned</span> <span class="keyword">long</span> flags, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">const</span> <span class="keyword">char</span> *name, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">void</span> *dev)</span></span></span><br></pre></td></tr></table></figure>
 <p>参数解释:</p>
 <p>Irq: 要分配的中断号.对某些设备而言,比如时钟或者键盘,这个值通常是预先确定的.而对于大多数其他设备来讲,这个值要么是可以通过探测获取,要么是通过编程动态获取.</p>
@@ -321,6 +321,8 @@
 <p>与中断相关设备的ASCII文本表示.pc机器键盘中断对应的为”keyboard”.这些名字会被/proc/irq 和 /proc/interrupts 文件使用,以便和用户通信</p>
 <p>第五个参数 dev 用于共享中短线.当一个中断处理程序需要释放时,dev将提供唯一的标识信息(cookie),以便从共享中短线的诸多中断处理程序中删除指定的那一个.如果无需共享中短线,该参数为null即可.</p>
 
+          
+        
       
     </div>
     
@@ -335,40 +337,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/中断-中断处理/" rel="tag"># 中断 中断处理</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/03/30/汇编/段间跳转/" rel="next" title="段间跳转">
-                <i class="fa fa-chevron-left"></i> 段间跳转
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/19/汇编/利用栈排序/" rel="prev" title="8086汇编之利用栈空间进行数据逆序">
-                8086汇编之利用栈空间进行数据逆序 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -378,11 +354,134 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/汇编/段间跳转/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/30/汇编/段间跳转/" itemprop="url">段间跳转</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T00:00:00+08:00">
+                2018-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">;利用jmp实现段内跳转 死循环</span><br><span class="line">assume cs:code ds:data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">;设置数据段地址</span><br><span class="line">mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov dx, 0</span><br><span class="line">s0:</span><br><span class="line">inc dx</span><br><span class="line">jmp short s0 </span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">重点:</span><br><span class="line">offset后面应该跟段内标号，也就是说，获得偏移地址时，用offset 。获得段地址时，什么都不用加。不过获得偏移地址时，不加offset，也能得到正确值。</span><br><span class="line"></span><br><span class="line">;汇编指令中利用jmp实现远跳转 </span><br><span class="line">jmp far ptr 标号</span><br><span class="line">;汇编指令中近跳转 2两个字节位移</span><br><span class="line">jmp near ptr 标号</span><br><span class="line"></span><br><span class="line">;基于内存中的地址进行跳转</span><br><span class="line">jmp word ptr [bx]</span><br><span class="line"></span><br><span class="line">;基于寄存器中的地址跳转</span><br><span class="line">jmp bx</span><br></pre></td></tr></table></figure>
+
+          
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -390,10 +489,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -414,17 +509,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -475,22 +561,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">#</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -624,10 +694,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="段间跳转 jmp,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨赛的博客">
-<meta property="og:url" content="http://yoursite.com/tags/多层循环/index.html">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637;利用jmp实现段内跳转 死循环assume cs:code ds:datadata segmentdata endscode segmentstart:;设置数据段地址mov ax, datamov ds, axmov bx, 0mov dx, 0s0:inc dxj">
+<meta name="keywords" content="段间跳转 jmp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="段间跳转">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/汇编/段间跳转/index.html">
 <meta property="og:site_name" content="杨赛的博客">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637;利用jmp实现段内跳转 死循环assume cs:code ds:datadata segmentdata endscode segmentstart:;设置数据段地址mov ax, datamov ds, axmov bx, 0mov dx, 0s0:inc dxj">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-30T09:26:50.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨赛的博客">
+<meta name="twitter:title" content="段间跳转">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637;利用jmp实现段内跳转 死循环assume cs:code ds:datadata segmentdata endscode segmentstart:;设置数据段地址mov ax, datamov ds, axmov bx, 0mov dx, 0s0:inc dxj">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/多层循环/">
+  <link rel="canonical" href="http://yoursite.com/2018/03/30/汇编/段间跳转/">
 
 
 
 
 
-  <title>Tag: 多层循环 | 杨赛的博客</title>
+  <title>段间跳转 | 杨赛的博客</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,52 +219,147 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>多层循环<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/汇编/段间跳转/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="json">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨赛的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/28/汇编/循环嵌套/" itemprop="url">
-              
-                <span itemprop="name">循环嵌套</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">段间跳转</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-28T00:00:00+08:00" content="2019-03-28">
-          03-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T00:00:00+08:00">
+                2018-03-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">;利用jmp实现段内跳转 死循环</span><br><span class="line">assume cs:code ds:data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line"></span><br><span class="line">data ends</span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">;设置数据段地址</span><br><span class="line">mov ax, data</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov dx, 0</span><br><span class="line">s0:</span><br><span class="line">inc dx</span><br><span class="line">jmp short s0 </span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">重点:</span><br><span class="line">offset后面应该跟段内标号，也就是说，获得偏移地址时，用offset 。获得段地址时，什么都不用加。不过获得偏移地址时，不加offset，也能得到正确值。</span><br><span class="line"></span><br><span class="line">;汇编指令中利用jmp实现远跳转 </span><br><span class="line">jmp far ptr 标号</span><br><span class="line">;汇编指令中近跳转 2两个字节位移</span><br><span class="line">jmp near ptr 标号</span><br><span class="line"></span><br><span class="line">;基于内存中的地址进行跳转</span><br><span class="line">jmp word ptr [bx]</span><br><span class="line"></span><br><span class="line">;基于寄存器中的地址跳转</span><br><span class="line">jmp bx</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/段间跳转-jmp/" rel="tag"># 段间跳转 jmp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/10/linux内核/request_irq中断注册/" rel="prev" title="request_irq中断注册函数参数说明">
+                request_irq中断注册函数参数说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -267,6 +367,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -472,6 +576,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
